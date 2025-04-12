@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="./index.html" method="get">
+
+        <div>
+            <input type="text" value="cse" readonly>
+        </div>
+
+        <div>
+            <label for="name" >Name:</label><input type="text" id="name" required><br/>
+        </div>
+        <div >
+            <label for="password">Password:</label><input style="font-variant: small-caps;" type="password" id="password"><br/>
+        </div>
+        <div>
+            <label for="contact">Contact:</label><input type="number" id="contact"><br/>
+        </div>
+        <div>
+            <label for="address">Address:</label><input type="text" id="address"><br/>
+        </div>
+        <div>
+            <label for="email">Email:</label><input type="email" id="name"><br/>
+        </div>
+
+        <input type="file" name="" id="" accept=".pdf">
+
+        <div>
+            Male: <input type="radio" name="" id="">
+            Female: <input type="radio" name="" id="">
+        </div>
+
+        <div>
+            <input type="checkbox" name="" id="">Cricket<br>
+            <input type="checkbox" name="" id="">Football<br>
+            <input type="checkbox" name="" id="">Basketball<br>
+            <input type="checkbox" name="" id="">Table tennis<br>
+            <input type="checkbox" name="" id="">Running<br>
+        </div>
+        <div>
+            <input type="submit" name="" id="">
+        </div>
+
+        <div>
+            <select name="Dropdown" id="">
+                <option value="select" disabled selected>select</option>
+                <option value="cse">CSE</option>
+                <option value="mechanical">mechanical</option>
+                <option value="electronics">electronics</option>
+                <option value="electrical">electrical</option>
+                <option value="civil">civil</option>
+            </select>
+        </div>
+
+        <!-- group select tab -->
+         <select multiple name="select" id="select-option" >
+            <optgroup label="frontend" >
+                
+                <option value="html">html</option>
+                <option value="css">css</option>
+                <option value="js">js</option>
+                <option value="tailwind">tailwind</option>
+            </optgroup>
+            <optgroup label="backend" >
+                
+                <option value="java">java</option>
+                <option value="python">python</option>
+                <option value="express">express</option>
+                <option value="nodejs">nodejs</option>
+            </optgroup>
+         </select>
+
+
+    </form>
+
+    <!-- media tags -->
+     <audio controls loop >
+        <source src="audio.mpeg">
+     </audio>
+
+     <video controls loop width="400px" height="520px">
+        <source src="video.mp4">
+     </video>
+
+     <picture>
+        <source media="(min-width:500px )" srcset="./img1.png">
+        <source media="(max-width:800px )" srcset="batman.jpeg">
+        <img src="batman.jpeg" alt="" srcset="">
+     </picture>
+    
+</body>
+</html>
