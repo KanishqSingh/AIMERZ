@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover Preview</title>
+  <style>
+    .link-container {
+      position: relative;
+      display: inline-block;
+      margin: 50px;
+    }
+
+    .hover-preview {
+      display: none;
+       position: absolute;
+      top: 25px;
+      left: 0;
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 6px;
+      width: 200px; 
+       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: opacity 0.3s ease-in-out;
+      z-index: 1000; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="link-container">
+  <a href="#" id="hoverLink">Hover over me</a>
+  <div class="hover-preview" id="previewBox">
+    This is a small preview of what this link is about. You can put any content here!
+  </div>
+</div>
+
+<script>
+  const link = document.getElementById('hoverLink');
+  const preview = document.getElementById('previewBox');
+
+  link.addEventListener('mouseenter', () => {
+    preview.style.display = 'block';
+  });
+
+  link.addEventListener('mouseleave', () => {
+    preview.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
