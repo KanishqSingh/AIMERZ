@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Arial', sans-serif;
+    }
+ 
+     .login_popup {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid black;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center; 
+    }
+/* 
+    .new_1 {
+      margin-bottom: 20px;
+    } */
+
+    /* .new_1 input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    } */
+/* 
+    p {
+      margin: 10px 0;
+      color: #333;
+    } */
+/* 
+    a {
+      text-decoration: none;
+      color: #3498db;
+      font-weight: bold;
+    } */
+
+    /* .button {
+      margin-top: 20px;
+      text-align: center;
+    } */
+/* 
+    .button button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    } */
+
+    /*.button button:hover {
+      background-color: #2980b9;
+    } */
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <form class="login_popup" action="">
+      <div class="new_1">
+        <input type="email" name="email" id="email" placeholder="Enter Email">
+        <input type="password" name="password" id="password" placeholder="Enter Password" />
+      </div>
+
+      <p>Already have an account?</p>
+      <a href="signup.html">Click here</a>
+
+      <div class="button">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
