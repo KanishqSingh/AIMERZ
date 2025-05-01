@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            display: flex;
+            /* background-color: red; */
+            justify-content: space-evenly;
+            background-color: rgb(241, 133, 211);
+            height: 60px;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+
+            justify-content: space-evenly;
+            width: 100vw;
+            height: 100%;
+
+
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: white;
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        .logo img {
+            border-radius: 15px;
+            background: transparent;
+            margin-left: 5px;
+        }
+
+        .banner {
+            background-image: url(Images/foodweb.jpg);
+            height: 30vw;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .banner_heading {
+            color: white;
+        }
+
+        .banner_para {
+            color: white;
+        }
+
+        .banner_section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column;
+            text-align: center;
+            line-height: 3rem;
+
+        }
+
+        .shop_luxury_button {
+            background-color: rgb(255, 106, 131);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+
+        .products{
+            background-color: rgb(247, 190, 218);
+            margin-top: 40px;
+            text-align: center;
+            display: grid;
+            height: 100%;
+            /* width: 100vw; */
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            margin-left: 100px;
+            margin-right: 100px;
+            gap: 40px;
+
+
+        }
+
+        .product-card{
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .product-card img{
+            height: 200px;
+            width: 200px;
+
+        }
+
+        /* responsive media query */
+        @media (max-width:600px) {
+            header{
+                flex-direction: column;
+                /* gap: 20px; */
+
+            }
+            nav ul{
+                flex-direction: column;
+                width: 100vw;
+                background-color: hotpink;
+                position: relative;
+                z-index: 2;
+                gap: 20px;
+                justify-content: center;
+                text-align: center;
+            }
+            .banner{
+                z-index: -1;
+                position: relative;
+                margin-top: 200px;
+                height: 500px;
+
+
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- RESPONSIVE WEB DESIGN VS ADAPTIVE WEB DESIGN -->
+    <header>
+        <div class="logo">
+            <img src="Images/doctor.jpg" height="50px" weight="50px" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Fragnances</a></li>
+                <li><a href="/">Organic</a></li>
+                <li><a href="/">Bath & Body</a></li>
+                <li><a href="/">Skin Care</a></li>
+                <li><a href="/">Offers</a></li>
+                <li><a href="/">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- banner -->
+
+    <div class="banner">
+
+        <section class="banner_section">
+            <h1 class="banner_heading">Welcome to VelvetVow</h1>
+            <p class="banner_para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum in ad magnicusantium.
+            </p>
+            <button class="shop_luxury_button">
+                shop luxury
+            </button>
+        </section>
+    </div>
+
+    <!-- for product display -->
+
+   
+        <div class="products">
+            <div class="product-card">
+                <img src="Images/ecommerce1.jpg"  alt="">
+                <h3>
+                    Hydrating face serum
+                </h3>
+                <p>$25.55</p>
+                <button>Add To Cart</button>
+            </div>
+    
+    
+            
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                    <button>Add To Cart</button>
+                </div>
+           
+    
+          
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                </div>
+         
+    
+           
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                </div>
+       
+          
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                </div>
+         
+          
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                </div>
+      
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                </div>
+            </div>
+          
+                <div class="product-card">
+                    <img src="Images/ecommerce1.jpg" height="100px" width="100px" alt="">
+                    <h3>
+                        Hydrating face serum
+                    </h3>
+                    <p>$25.55</p>
+                </div>
+           
+        </div>
+
+  
+    
+</body>
+
+</html>
