@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gmail UI Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <div class="flex items-center justify-between px-4 py-2 bg-white shadow-md">
+    <!-- Left -->
+    <div class="flex items-center gap-4">
+      <i class="fas fa-bars text-xl text-gray-600 cursor-pointer"></i>
+      <img src="https://i.pinimg.com/originals/ae/47/fa/ae47fa9a8fd263aa364018517020552d.png" class="h-10" alt="Logo" />
+    </div>
+
+    <!-- Middle: Search -->
+    <div class="flex items-center bg-gray-100 px-3 py-1 rounded-full w-1/2 max-w-lg">
+      <i class="fas fa-search text-gray-500 mr-2"></i>
+      <input type="text" placeholder="Search mail" class="bg-transparent w-full outline-none" />
+      <span class="material-icons text-gray-500 cursor-pointer">arrow_drop_down</span>
+    </div>
+
+    <!-- Right -->
+    <div class="flex items-center gap-4">
+      <span class="material-icons cursor-pointer text-gray-600">apps</span>
+      <span class="material-icons cursor-pointer text-gray-600">notifications</span>
+      <span class="material-icons cursor-pointer text-gray-600">account_circle</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white h-screen shadow-md p-4">
+      <button class="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 mb-6">
+        <span class="material-icons">add</span>
+        Compose
+      </button>
+
+      <!-- Sidebar Options -->
+      <div class="space-y-3 text-gray-700">
+        <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md ">
+          <span class="material-icons">inbox</span>
+          <span>Inbox</span>
+        </div>
+        <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <span class="material-icons">star</span>
+          <span>Starred</span>
+        </div>
+        <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <span class="material-icons">access_time</span>
+          <span>Snoozed</span>
+        </div>
+        <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <span class="material-icons">send</span>
+          <span>Sent</span>
+        </div>
+        <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <span class="material-icons">note</span>
+          <span>Notes</span>
+        </div>
+        <div class="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+          <span class="material-icons">expand_more</span>
+          <span>More</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Placeholder -->
+    <div class="flex-1 p-6">
+      <h2 class="text-xl font-semibold text-gray-700">Welcome to Gmail UI</h2>
+      <p class="text-gray-500">This is just a front-end clone using Tailwind CSS.</p>
+    </div>
+  </div>
+</body>
+
+</html>
