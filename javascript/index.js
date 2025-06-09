@@ -43,3 +43,13 @@ else if(temp >11 && temp < 25) {
 }
 
 let aaaaa = prompt('enter a number');
+
+
+const display = () =>{
+    console.log("hello");
+    return 0;
+    
+}
+console.log(display());
+
+
