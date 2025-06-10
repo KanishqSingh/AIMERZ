@@ -18,3 +18,16 @@ const arr2 = arr.toSpliced(2)
 console.log(arr);
 
 //objects 
+
+const marks = [12,65,48,74,25,12,75,88,556,4];
+marks.map((num)=>{
+    console.log(num+2);
+    
+}) //automaticallly creates an array and stores value in it 
+
+
+//forEach
+marks.forEach((num)=>{
+    console.log(num);
+    
+}) //does not create an array and stores value
