@@ -31,3 +31,4 @@ marks.forEach((num)=>{
     console.log(num);
     
 }) //does not create an array and stores value
+
