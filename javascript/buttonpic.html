@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>click button to change image</h1>
+    <img id="image1" src="assets/aimerz.png" height="50px" width="50px" alt="">
+    <button onclick="changeImage('assets/feed.png')"></button>
+    <button onclick="changeImage('assets/logo.png')"></button>
+    <button onclick="changeImage('assets/Profile.png')"></button>
+
+    <script>
+        function changeImage(img) {
+
+            const changeimg = document.getElementById('image1')
+            changeimg.src = img;
+
+
+            
+        }
+    </script>
+</body>
+</html>

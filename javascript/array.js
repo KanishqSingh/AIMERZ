@@ -32,3 +32,6 @@ marks.forEach((num)=>{
     
 }) //does not create an array and stores value
 
+const arr21 = ['eat','code','repeat',"bath"];
+arr21.splice(1,2);
+console.log(arr21);
