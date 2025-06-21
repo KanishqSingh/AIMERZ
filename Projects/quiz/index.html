@@ -1,0 +1,126 @@
+<script>
+    class Question {
+        constructor(text, option, answer) {
+            this.text = text;
+            this.option = option;
+            this.answer = answer;
+        }
+
+        isCorrect(choice) {
+            return this.answer === choice;
+        }
+    }
+
+    class Quiz {
+        constructor(questions) {
+            this.questions = questions;
+            this.currentIndex = 0;
+            this.score = 0;
+        }
+
+        getCurrentQuestion() {
+            return this.questions[this.currentIndex];
+        }
+
+        guess(answer) {
+            if (this.getCurrentQuestion().isCorrect(answer)) {
+                this.score++;
+            }
+            this.currentIndex++;
+        }
+
+        hasEnded() {
+            return this.currentIndex >= this.questions.length;
+        }
+    }
+
+    const questions = [
+        new Question("What is the capital of India?", ["London", "Mumbai", "Delhi", "None of these"], "Delhi"),
+        new Question("Which planet is known as the Red Planet?", ["Earth", "Mars", "Jupiter", "Venus"], "Mars"),
+        new Question("What does HTML stand for?", ["HyperText Markup Language", "Home Tool Markup Language", "Hyperlinks Text Markup Language", "Hyper Tool Multi Language"], "HyperText Markup Language"),
+        new Question("Who wrote the Ramayana?", ["Valmiki", "Tulsidas", "Kalidas", "Ved Vyasa"], "Valmiki"),
+        new Question("What is the chemical symbol for water?", ["O2", "H2O", "CO2", "NaCl"], "H2O"),
+        new Question("Which is the smallest continent?", ["Asia", "Australia", "Europe", "Antarctica"], "Australia"),
+        new Question("What is the square root of 64?", ["6", "7", "8", "9"], "8"),
+        new Question("In which year did India get independence?", ["1945", "1946", "1947", "1950"], "1947"),
+        new Question("Who is the founder of Microsoft?", ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Elon Musk"], "Bill Gates"),
+        new Question("Which gas do plants absorb from the atmosphere?", ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], "Carbon Dioxide")
+    ];
+
+    const quiz = new Quiz(questions);
+    const quizEl = document.getElementById('quiz');
+    const nextBtn = document.getElementById('next');
+    const timerDisplay = document.getElementById('timer');
+    let timer;
+    let timerLeft = 15;
+
+    function startTimer() {
+        timerLeft = 15;
+        timerDisplay.innerText = `⏱️ Time: ${timerLeft}s`;
+
+        timer = setInterval(() => {
+            timerLeft--;
+            timerDisplay.innerText = `⏱️ Time: ${timerLeft}s`;
+            if (timerLeft <= 0) {
+                clearInterval(timer);
+                quiz.guess(""); // no answer selected
+                showQuestion();
+            }
+        }, 1000);
+    }
+
+    function showQuestion() {
+        clearInterval(timer);
+
+        if (quiz.hasEnded()) {
+            showScore();
+            return;
+        }
+
+        const current = quiz.getCurrentQuestion();
+        quizEl.innerHTML = `
+            <h3>${current.text}</h3>
+            ${current.option.map(opt => `
+                <div class="option" onclick="selectAnswer(this)">${opt}</div>
+            `).join("")}
+        `;
+
+        startTimer();
+        nextBtn.style.display = "none";
+    }
+
+    function selectAnswer(selected) {
+        clearInterval(timer);
+
+        const options = document.querySelectorAll('.option');
+        options.forEach(opt => opt.style.pointerEvents = 'none');
+
+        const answer = selected.innerText;
+        const correct = quiz.getCurrentQuestion().answer;
+
+        if (answer === correct) {
+            selected.style.background = '#c8e6c9'; // green
+        } else {
+            selected.style.background = '#ffcdd2'; // red
+            options.forEach(opt => {
+                if (opt.innerText === correct) {
+                    opt.style.background = '#c8e6c9';
+                }
+            });
+        }
+
+        quiz.guess(answer);
+        nextBtn.style.display = "inline";
+    }
+
+    function showScore() {
+        quizEl.innerHTML = `<h2>Your Score: ${quiz.score}/${quiz.questions.length}</h2>`;
+        timerDisplay.style.display = 'none';
+        nextBtn.style.display = 'none';
+    }
+
+    nextBtn.addEventListener('click', showQuestion);
+
+    // Start the quiz
+    showQuestion();
+</script>
