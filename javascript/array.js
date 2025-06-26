@@ -35,3 +35,13 @@ marks.forEach((num)=>{
 const arr21 = ['eat','code','repeat',"bath"];
 arr21.splice(1,2);
 console.log(arr21);
+
+
+// let arrr = [1,2,3].push(4)
+// console.log(arrr);
+
+let arrr = [1,2,3];
+let secarr = arrr.push(4);
+console.log(arrr);
+
+console.log(null == undefined);
