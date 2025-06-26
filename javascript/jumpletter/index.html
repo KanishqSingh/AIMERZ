@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jumping Text with JS</title>
+  <style>
+    .jumping-text {
+      display: inline-block;
+      font-size: 2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .jump {
+      animation: jumpAnim 0.5s;
+    }
+
+    @keyframes jumpAnim {
+      0%   { transform: translateY(0); }
+      30%  { transform: translateY(-20px); }
+      60%  { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="text" class="jumping-text">Jump with JS!</h1>
+  <button onclick="jumpText()">Jump</button>
+
+  <script>
+    function jumpText() {
+      const text = document.getElementById("text");
+      text.classList.add("jump");
+
+      // Remove the class after animation to allow re-trigger
+      setTimeout(() => {
+        text.classList.remove("jump");
+      }, 500); // match animation duration
+    }
+  </script>
+
+</body>
+</html>
