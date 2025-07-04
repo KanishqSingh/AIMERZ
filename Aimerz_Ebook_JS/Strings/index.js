@@ -86,3 +86,12 @@ console.log(convertToBinary(10)); // Output: "1010"
 console.log(convertToBinary(255)); // Output: "11111111"
 console.log(convertToBinary(0)); // Output: "0"
  
+
+//Calculate Electricity Bill
+function calculateElectricityBill(units, costPerUnit) {
+    return units * costPerUnit;
+}
+console.log(calculateElectricityBill(250, 5)); // Output: 1250
+console.log(calculateElectricityBill(100, 10)); // Output: 1000
+console.log(calculateElectricityBill(0, 5)); // Output: 0
+ 
