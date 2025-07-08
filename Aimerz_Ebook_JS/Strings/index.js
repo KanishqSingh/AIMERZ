@@ -71,6 +71,77 @@ const cleanedPhoneNumber = cleanPhoneNumber(phoneNumber);
 
 console.log(cleanedPhoneNumber);  
 
+//valid url
+function convertUrlsToLinks(text) {
+  const urlPattern = /(https?:\/\/[^\s]+)/g; 
+  return text.replace(urlPattern, (url) => `<a href="${url}" target="_blank">${url}</a>`);
+}
+
+let updatedText = convertUrlsToLinks("Visit our website at http://example.com for more information. Also, check out https://google.com for other resources.");
+console.log(updatedText);
+
+
+//url generator
+function generateSearchURL(baseURL, searchQuery, categoryFilter) {
+  return baseURL.concat("?query=", searchQuery, "&category=", categoryFilter);
+}
+
+
+let baseURL = "https://www.example.com/search";
+let searchQuery = "apple";
+let categoryFilter = "electronics";
+
+let fullURL = generateSearchURL(baseURL, searchQuery, categoryFilter);
+console.log(fullURL);
+
+//valid file extension
+function validateFileExtension(fileName) {
+  const validExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+  const isValid = validExtensions.some(extension => fileName.toLowerCase().endsWith(extension));
+  console.log(isValid ? "Valid file type. You can upload the file." : "Invalid file type. Please upload a .jpg, .jpeg, .png, or .gif file.");
+}
+
+validateFileExtension("profile-picture.jpg");   
+validateFileExtension("document.pdf");
+
+
+//Search Products
+
+function searchProducts(products, search) {
+  return products.filter(product => product.toUpperCase() === search.toUpperCase());
+}
+
+
+let products = ["Apple", "banana", "Orange", "grape", "APPLE"];
+let search = "apple";
+
+let searchResult = searchProducts(products, search);
+console.log(searchResult); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
