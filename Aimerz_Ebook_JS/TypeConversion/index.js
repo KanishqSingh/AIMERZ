@@ -17,7 +17,7 @@ validateAge(ageInput);
 
 
 
- // Convert to string and remove non-numeric characters
+
   let cleanedPhoneNumber = String(phoneInput).replace(/D/g, ''); 
 
   // Ensure the phone number has exactly 10 digits
@@ -26,4 +26,80 @@ validateAge(ageInput);
   } else {
     console.log("Invalid phone number format");
   }
+
+
+function formatPriceFromApiResponse(apiResponse) {
+
+  const priceAsNumber = parseFloat(apiResponse.price);
+  
+
+  const formattedPrice = `$${priceAsNumber.toFixed(2)}`;  
+
+  return formattedPrice;
+}
+
+
+const apiResponse = {
+  productId: 12345,
+  productName: "Laptop",
+  price: "999.99", 
+  available: true
+};
+
+console.log(formatPriceFromApiResponse(apiResponse));  
+
+
+function storeUserData(user) {
+
+  let userJson = JSON.stringify(user);
+  
+ 
+  localStorage.setItem("user", userJson);
+
+  console.log("User data stored in local storage.");
+}
+
+
+let user = { name: "Alice", age: 30 };
+storeUserData(user);
+
+
+
+function getCurrentDateString() {
+  
+  let currentDate = new Date();
+  
+
+  let currentDateString = currentDate.toString();
+
+  return currentDateString;
+}
+
+
+console.log(getCurrentDateString());
+
+
+const users = [
+ { name: "John Doe", age: 30,email: "john.doe@example.com" },
+{ name: "Jane Smith", age: 25,email: "jane.smith@example.com" },
+ { name: "Alice Johnson", age: 35,email: "alice.johnson@example.com" },
+{ name: "Bob Brown", age: 40, email: "bob.brown@example.com" }
+];
+
+function displayUsers(users) {
+  console.log("List of Users:");
+  users.forEach((user, index) => {
+    console.log(index + 1);
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.email);
+    console.log("------------------------");
+  });
+}
+
+displayUsers(users);
+
+
+
+
 
